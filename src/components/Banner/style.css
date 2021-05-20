@@ -1,0 +1,106 @@
+.ground-banner {
+  /* max-width: 1200px; */
+  width: 100%;
+  /* height: 420px; */
+  border:1px solid green;
+  margin: auto;
+  position: relative;
+  flex-wrap: wrap;
+}
+.ground-banner .list-banner {
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+.ground-banner .list-banner .list-item-banner .slick-dots {
+  bottom: 0;
+  margin: 10px auto;
+  border:1px solid red;
+}
+
+.ground-banner .list-banner .items-banner {
+  /* max-width: 1200px; */
+  margin: auto;
+  /* height: 320px; */
+  position: relative;
+  display: block;
+  border: 1px solid blue;
+  text-align: center;
+}
+.ground-banner .list-banner .items-banner img {
+  position: relative;
+  /* width: 50%;
+  height: 50%; */
+  border:1px solid red;
+}
+
+.ground-banner .list-banner .slick-next,
+.ground-banner .list-banner .slick-prev {
+  display: block;
+}
+.ground-banner .list-banner .slick-next:before{
+  position: absolute;
+  width: 70px;
+  height: 120px;
+  text-indent: -9999px;
+  background: url(../../assets//images/img-sprite.png)no-repeat;
+  background-position: -100px -21px;
+  top: 0px;
+  right: -100px;
+  z-index: 5;
+  cursor: pointer;
+}
+.ground-banner .list-banner .slick-prev:before{
+    position: absolute;
+    width: 70px;
+    height: 120px;
+    text-indent: -9999px;
+    background: url(../../assets//images/img-sprite.png)no-repeat;
+    background-position: -20px -21px;
+    top: 0px;
+    left : -100px!important;
+    z-index: 5;
+    cursor: pointer;
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .slick-next,
+  .slick-prev {
+    width: 25px;
+    height: 60px;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 488px) {
+  .slick-next,
+  .slick-prev {
+    width: 20px;
+    height: 50px;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .slick-next,
+  .slick-prev {
+    width: 18px;
+    height: 45px;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 13px;
+  }
+}
