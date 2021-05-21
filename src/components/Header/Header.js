@@ -41,7 +41,7 @@ const Nav = () => {
   return (
     <div className="row">
       <div className="header">
-        <div className="header__container">
+        <div className="header__container container">
           <div className="header__left">
             <div onClick={() => history.push(ROUTES.HOME)}>
               <img src={logo} />
@@ -102,7 +102,7 @@ const Nav = () => {
           </div>
         </div>
         <div className="header__bottom">
-          <ul>
+          <ul className="container">
             <li>Home</li>
             <li>Product</li>
             <li>About</li>

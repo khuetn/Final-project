@@ -1,0 +1,193 @@
+// .ground-banner {
+//   width: 100%;
+//   margin: auto;
+//   flex-wrap: wrap;
+//   .list-banner {
+//     position: relative;
+//     text-align: center;
+//     justify-items: center;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     margin: 0 auto;
+//     .list-banner__left{
+    
+//       .list-item-banner{
+//         .slick-dots{
+//           bottom: 0;
+//           margin: 10px auto;
+//         }
+//         .items-banner{
+//            margin: auto;
+//            position: relative;
+//            display: block;
+//           text-align: center;
+//           img{
+//             position: relative; 
+//             border:1px solid red;
+//             width: 50%
+//           }
+//         }
+//       }
+//     }
+//     .list-banner__right{
+//       border:1px solid green;
+//       width: 30%
+//     }
+//   }
+ 
+// }
+
+.ground-banner .list-banner .list-item-banner .slick-dots {
+  bottom: 0;
+  margin: 10px auto;
+  border:1px solid red;
+  position: absolute;
+  left:133,33%;
+  width: 67%;
+  display:flex;
+  justify-content: flex-end;
+}
+
+// .ground-banner .list-banner .items-banner {
+//   /* max-width: 1200px; */
+//   margin: auto;
+//   /* height: 320px; */
+//   position: relative;
+//   display: block;
+//   text-align: center;
+// }
+// .ground-banner .list-banner .items-banner img {
+//   position: relative;
+//   /* width: 50%;
+//   height: 50%; */
+//   border:1px solid red;
+// }
+
+.ground-banner .list-banner .slick-next,
+.ground-banner .list-banner .slick-prev {
+  display: inline-block;
+ 
+}
+.ground-banner .list-banner .slick-next:before{
+  position: absolute;
+  width: 70px;
+  height: 120px;
+  text-indent: -9999px;
+  background: url(../../assets//images/img-sprite.png)no-repeat;
+  background-position: -100px -21px;
+  top: 0px;
+  right: -200px;
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+  cursor: pointer;
+}
+.ground-banner .list-banner .slick-prev:before{
+    position: absolute;
+    width: 70px;
+    height: 120px;
+    text-indent: -9999px;
+    background: url(../../assets//images/img-sprite.png)no-repeat;
+    background-position: -20px -21px;
+    top: 0;
+    left : 0;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    cursor: pointer;
+
+}
+
+
+// @media screen and (max-width: 768px) {
+//   .slick-next,
+//   .slick-prev {
+//     width: 25px;
+//     height: 60px;
+//   }
+//   .slick-next:before,
+//   .slick-prev:before {
+//     font-size: 18px;
+//   }
+// }
+
+// @media screen and (max-width: 488px) {
+//   .slick-next,
+//   .slick-prev {
+//     width: 20px;
+//     height: 50px;
+//   }
+//   .slick-next:before,
+//   .slick-prev:before {
+//     font-size: 15px;
+//   }
+// }
+
+// @media screen and (max-width: 320px) {
+//   .slick-next,
+//   .slick-prev {
+//     width: 18px;
+//     height: 45px;
+//   }
+//   .slick-next:before,
+//   .slick-prev:before {
+//     font-size: 13px;
+//   }
+// }
+
+
+.ground-banner{
+  .list-banner{
+    border:1px solid blue;
+    width : 100%;
+    display: flex;
+    justify-content: space-between;
+    .list-banner__left{
+      border: 1px solid red;
+      width :60%;
+    }
+    .list-banner__right{
+      border:1px solid green;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      h1{
+        font-size : 64px;
+        text-transform: uppercase;
+        font-weight: 100;
+        margin-bottom:25px;
+      }
+      h2{
+        font-size : 48px;
+        text-transform: uppercase;
+        font-weight: 100;
+        margin-bottom:20px;
+
+      }
+      p{
+        color: #999;
+      font-size: 18px;
+      margin-bottom:25px;
+
+      }
+      button{
+        border: 1px solid #ddd;
+       color: #000;
+       cursor: pointer;
+       padding: 12px 40px;
+      display: inline-block;
+      font-size: 18px;
+      outline: none;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      background: #FFF;
+      text-transform: capitalize;
+      }
+    }
+
+    .slick-prev, .slick-next{
+      border:1px solid yellow;
+    }
+  }
+}

@@ -7,7 +7,7 @@ function ProductList(props) {
     return state.productList;
   });
   return (
-    <div className="ProductList__container">
+    <div className="ProductList__container row">
       {filteredProducts.length !== 0 ? (
         <>
           {filteredProducts.map((product, index) => {

@@ -1,0 +1,143 @@
+// .ground-banner {
+//   width: 100%;
+//   margin: auto;
+//   flex-wrap: wrap;
+//   .list-banner {
+//     position: relative;
+//     text-align: center;
+//     justify-items: center;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     margin: 0 auto;
+//     .list-banner__left{
+    
+//       .list-item-banner{
+//         .slick-dots{
+//           bottom: 0;
+//           margin: 10px auto;
+//         }
+//         .items-banner{
+//            margin: auto;
+//            position: relative;
+//            display: block;
+//           text-align: center;
+//           img{
+//             position: relative; 
+//             border:1px solid red;
+//             width: 50%
+//           }
+//         }
+//       }
+//     }
+//     .list-banner__right{
+//       border:1px solid green;
+//       width: 30%
+//     }
+//   }
+ 
+// }
+
+// .ground-banner .list-banner .list-item-banner .slick-dots {
+//   bottom: 0;
+//   margin: 10px auto;
+// }
+
+// .ground-banner .list-banner .items-banner {
+//   /* max-width: 1200px; */
+//   margin: auto;
+//   /* height: 320px; */
+//   position: relative;
+//   display: block;
+//   text-align: center;
+// }
+// .ground-banner .list-banner .items-banner img {
+//   position: relative;
+//   /* width: 50%;
+//   height: 50%; */
+//   border:1px solid red;
+// }
+
+.ground-banner .list-banner .slick-next,
+.ground-banner .list-banner .slick-prev {
+  display: inline-block;
+ 
+}
+.ground-banner .list-banner .slick-next:before{
+  position: absolute;
+  width: 70px;
+  height: 120px;
+  text-indent: -9999px;
+  background: url(../../assets//images/img-sprite.png)no-repeat;
+  background-position: -100px -21px;
+  top: 50%;
+  right: -100px;
+  z-index: 5;
+  cursor: pointer;
+}
+.ground-banner .list-banner .slick-prev:before{
+    position: absolute;
+    width: 70px;
+    height: 120px;
+    text-indent: -9999px;
+    background: url(../../assets//images/img-sprite.png)no-repeat;
+    background-position: -20px -21px;
+    top: 50%;
+    left : -100px!important;
+    z-index: 5;
+    cursor: pointer;
+
+}
+
+
+// @media screen and (max-width: 768px) {
+//   .slick-next,
+//   .slick-prev {
+//     width: 25px;
+//     height: 60px;
+//   }
+//   .slick-next:before,
+//   .slick-prev:before {
+//     font-size: 18px;
+//   }
+// }
+
+// @media screen and (max-width: 488px) {
+//   .slick-next,
+//   .slick-prev {
+//     width: 20px;
+//     height: 50px;
+//   }
+//   .slick-next:before,
+//   .slick-prev:before {
+//     font-size: 15px;
+//   }
+// }
+
+// @media screen and (max-width: 320px) {
+//   .slick-next,
+//   .slick-prev {
+//     width: 18px;
+//     height: 45px;
+//   }
+//   .slick-next:before,
+//   .slick-prev:before {
+//     font-size: 13px;
+//   }
+// }
+
+
+.ground-banner{
+  .list-banner{
+    border:1px solid blue;
+    width : 100%;
+    display: flex;
+    .list-banner__left{
+      border: 1px solid red;
+      width :60%;
+    }
+    .list-banner__right{
+      border:1px solid green;
+    }
+  }
+}

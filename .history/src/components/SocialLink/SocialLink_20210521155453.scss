@@ -1,0 +1,18 @@
+.social-link{
+    display: flex;
+    .social-link__left{
+
+    }
+    .social-link__right{
+        .social-link__item{
+            a{
+                span{
+                    height: 75px;
+                    width: 75px;
+                    display: block;
+                    background: url(../../assets//images/img-sprite.png)no-repeat -34px -157px;
+                }
+            }
+        }
+    }
+}
