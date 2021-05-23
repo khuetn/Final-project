@@ -1,0 +1,62 @@
+import React from "react";
+import blackstarIcon from "../../assets/images/star-solid.svg";
+import starIcon from "../../assets/images/star-regular.svg";
+
+import "./RatingStar.scss";
+function RatingStar(props) {
+  const countStar = 3;
+  const [starReview, setStarReview] = React.useState(countStar);
+
+  const initialStarbegin = [...Array(5)].map((x, index) => {
+    if (index < starReview) {
+      return blackstarIcon;
+    } else {
+      return starIcon;
+    }
+  });
+  const [initialStar, setInitialStar] = React.useState(initialStarbegin);
+  const [imgSrc, setImgSrc] = React.useState(initialStar);
+
+  function changeIconStar(index) {
+    let newState = initialStar;
+    if (imgSrc[index] == blackstarIcon) {
+      newState[index] = starIcon;
+    } else {
+      newState[index] = blackstarIcon;
+    }
+    setImgSrc(newState);
+  }
+
+  function changeInitialStar(index) {
+    const abc = [...Array(5)].map((x, index) => {
+      if (index < starReview) {
+        return blackstarIcon;
+      } else {
+        return starIcon;
+      }
+    });
+    setInitialStar(abc);
+  }
+  return (
+    <div class="rating-star">
+      {imgSrc.map((star, index) => {
+        const starIndex = index;
+        return (
+          <span>
+            <img
+              src={star}
+              onMouseOver={() => {
+                changeIconStar(starIndex);
+              }}
+              onClick={() => {
+                setStarReview(starIndex + 1);
+              }}
+            />
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+export default RatingStar;
