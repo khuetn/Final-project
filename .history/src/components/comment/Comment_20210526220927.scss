@@ -1,0 +1,27 @@
+.comment{
+    box-shadow: 0 1px 6px rgb(239, 233, 242);
+    border: 1px solid rgb(239, 233, 242);
+    .comment__user{
+        .user__profile{
+            display: flex;
+            .user__img{
+
+            }
+            .user__name{
+                font-size:18px;
+            }
+        }
+        .user__vote{
+
+        }
+        .user__comment{
+            .user__text{
+
+            }
+            .user__post{}
+        }
+    }
+    .comment__list{
+
+    }
+}

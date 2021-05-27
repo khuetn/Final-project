@@ -1,0 +1,49 @@
+.comment{
+    box-shadow: 0 1px 6px rgb(239, 233, 242);
+    border: 1px solid rgb(239, 233, 242);
+    padding: 40px;
+    background-color:#909090;
+    .comment__title{
+        color: white;
+        font-size: 30px;
+        margin-bottom :20px;
+    }
+    .comment__container{
+        background-color: white;
+        padding : 20px;
+        border-radius: 5px;
+        .comment__user{
+            .user__profile{
+                display: flex;
+                align-items: center;
+    
+                .user__img{
+                    font-size: 30px;
+                    padding : 10px 10px 10px 0;
+                    display: flex;
+                    align-items: center;
+                }
+                .user__name{
+                    font-size:18px;
+                    margin: 10px;
+                    padding: 20px 0px;
+                    width:100%;
+                    border-bottom: 1px solid #909090;
+                }
+            }
+            .user__vote{
+    
+            }
+            .user__comment{
+                .user__text{
+    
+                }
+                .user__post{}
+            }
+        }
+    }
+    
+    .comment__list{
+
+    }
+}

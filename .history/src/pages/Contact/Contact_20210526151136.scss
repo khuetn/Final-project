@@ -1,0 +1,25 @@
+.contact__header{
+    .contact__title{
+        font-size:60px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+    }
+    p{
+        font-size: 18px;
+    }
+}
+.contact__body{
+    .contact__item{
+        border-top: 1px dotted red;
+        .item__title{
+            font-size: 22px;
+            text-transform: uppercase;
+            font-weight:700;
+        }
+        p{
+            font-size: 18px;
+
+        }
+    }
+}

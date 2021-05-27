@@ -1,0 +1,22 @@
+.cart{
+    .container{
+        h3{
+            color: #000;
+             margin-bottom: 0.5em;
+            font-size: 22px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .row{
+            .col-9{
+                .cart__heading{
+                    .row{
+                        .col-2{
+                            border:1px solid red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

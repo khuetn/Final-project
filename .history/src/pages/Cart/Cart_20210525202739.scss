@@ -1,0 +1,54 @@
+.cart{
+    .container{
+        h3{
+            color: #000;
+             margin-bottom: 0.5em;
+            font-size: 22px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .row{
+            .col-9{
+                .cart__heading{
+                    .row{
+                        .col-2{
+                            font-size: 16px;
+                            font-weight:bold;
+                        }
+                    }
+                }
+            }
+            .col-3{
+                .summary{
+                    .summary__heading{
+                        text-align: center;
+                        font-size:18px;
+                        background-color:#80ABB0;
+                        color: white;
+                    }
+                    .summary__details{
+                        background-color : #d5d5d5;
+                        border: 1px solid FF9966;
+                        .row{
+                            .col-6{
+                                color:orange;
+                                font-size:16px;
+                            }
+                        }
+                        button{
+                            border:1px solid #FF9966;
+                            background-color : #FF9966;
+                            transition: all 0.5s;
+                            color: white;
+                            font-weight: bold;
+                            &:hover{
+                                background-color: orange;
+                                color:white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

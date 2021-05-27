@@ -1,0 +1,89 @@
+.comment{
+    box-shadow: 0 1px 6px rgb(239, 233, 242);
+    border: 1px solid rgb(239, 233, 242);
+    padding: 40px;
+    background-color:#909090;
+    .comment__title{
+        color: white;
+        font-size: 30px;
+        margin-bottom :20px;
+    }
+    .comment__container{
+        background-color: white;
+        padding : 20px;
+        border-radius: 5px;
+        .comment__user{
+            .user__profile{
+                display: flex;
+                align-items: center;
+    
+                .user__img{
+                    font-size: 30px;
+                    padding : 10px 10px 10px 0;
+                    display: flex;
+                    align-items: center;
+                }
+                .user__name{
+                    font-size:18px;
+                    padding: 20px 0px 10px;
+                    width:100%;
+                    border-bottom: 1px solid #909090;
+                }
+            }
+            .user__vote{
+    
+            }
+            .user__comment{
+                .user__text{
+                    outline: none;
+                    border: none;
+                    width : 100%;
+                    border-bottom: 1px solid #909090;
+                    padding : 10px 0 20px;
+                }
+                .user__post{
+                    background-color: rgb(205,205,205);
+                    border:none;
+                    outline:none;
+                    padding: 10px;
+                    font-weight: bold;
+                    transition :all 0.4s;
+                    &:hover{
+                        background-color:orange;
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+    .comment__toogle{
+        justify-content:space-between;
+        margin-top:20px;
+        .toogle__title{
+            color:white;
+            font-size: 30px;
+            font-weight: bold;
+            p{
+                font-size:18px;
+                color: black;
+            }
+        }
+        .toogle__button{
+            background-color:black;
+            color: white;
+            border-radius: 5px;
+            height : 55px;
+            padding: 10px 20px;
+            border : none;
+            outline:none;
+            cursor: pointer;
+            &:hover{
+                background-color: orange;
+                color: white;
+            }
+        }
+    }
+    .comment__list{
+
+    }
+}

@@ -1,0 +1,34 @@
+.comment{
+    box-shadow: 0 1px 6px rgb(239, 233, 242);
+    border: 1px solid rgb(239, 233, 242);
+    padding-left: 40px;
+    .comment__user{
+        .user__profile{
+            display: flex;
+            align-items: center;
+
+            .user__img{
+                font-size: 30px;
+                padding : 10px;
+                display: flex;
+                align-items: center;
+            }
+            .user__name{
+                font-size:18px;
+                margin-left: 10px;
+            }
+        }
+        .user__vote{
+
+        }
+        .user__comment{
+            .user__text{
+
+            }
+            .user__post{}
+        }
+    }
+    .comment__list{
+
+    }
+}
