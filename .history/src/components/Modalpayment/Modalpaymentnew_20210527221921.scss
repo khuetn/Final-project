@@ -1,0 +1,78 @@
+.ant-drawer-body{
+    display: flex;
+    flex-direction: column;
+}
+.checkout__container{
+    background-color :rgb(144,144,144);
+    border-radius: 7px;
+    padding :15px;
+}
+.checkout__title{
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align:center;
+    color:white;
+    margin-bottom: 30px;
+}
+
+.checkout__listItem{
+    padding : 15px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color:rgb(144,144,144);
+    background-color:white;
+    margin-bottom: 20px;
+    .checkout__listTitle{
+        font-weight: bold;
+        display: flex;
+        justify-content:space-between;
+        text-transform: uppercase;
+        span{
+            margin: 0px 20px 5px;
+            max-width:200px;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .checkout__item{
+        display: flex;
+        justify-content:space-between;
+        border-top: 1px solid rgb(144,144,144);;
+        span{
+            margin: 10px 20px 10px;
+            max-width:200px;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+    }
+    .checkout__totalBill{
+        display: flex;
+        justify-content:space-between;
+        font-weight: bold;
+        border-top: 1px solid rgb(144,144,144);;
+
+        span{
+            margin: 10px 20px 10px;
+            max-width:200px;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+    }
+}
+.checkout__subtitle{
+    color: white;
+    font-size: 22px;
+}
+.group-phone{
+    border:1px solid red;
+    display: flex;
+    input{
+        border:1px solid green;
+    }
+}

@@ -1,0 +1,22 @@
+.ProductList__container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    // width: 1600px;
+    .pagination{
+        width:100%;
+        text-align: center;
+        margin-top: 50px;
+        span{
+            border: 1px solid;
+            cursor: pointer;
+            margin: 20px;
+            height: 30px;
+            width:30px;
+            border-radius: 50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+    }
+}

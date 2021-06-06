@@ -1,0 +1,15 @@
+.checkout__title{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.checkout__listItem{
+    display: flex;
+    flex-direction: column;
+    .checkout__item{
+        display: flex;
+        border: 1px solid red;
+        span{
+            margin-right: 20px;
+        }
+    }
+}

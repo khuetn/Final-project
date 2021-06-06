@@ -1,0 +1,40 @@
+.ant-drawer-body{
+    display: flex;
+    flex-direction: column;
+}
+.checkout__container{
+    border:1px solid red;
+    background-color :rgb(144,144,144);
+    border-radius: 15px!important;
+}
+.checkout__title{
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align:center;
+}
+.checkout__listTitle{
+    display: flex;
+    justify-content:space-between;
+
+}
+.checkout__listItem{
+    display: flex;
+    flex-direction: column;
+    .checkout__item{
+        display: flex;
+        border: 1px solid red;
+        justify-content:space-between;
+        span{
+            margin: 10px 20px 10px;
+            max-width:200px;
+            border:1px solid green;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+.checkout__totalBill{
+    display: flex;
+    justify-content:space-between;
+
+}
