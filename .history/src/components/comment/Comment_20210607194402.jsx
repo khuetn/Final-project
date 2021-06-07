@@ -89,30 +89,6 @@ function Comment(props) {
     }
   }
 
-  function handleDeleteComment(index) {
-    alert(index);
-
-    const linkProduct = firebase.db.collection("products").doc(productUid);
-    linkProduct.get().then((doc) => {
-      console.log(doc.exists);
-      if (doc.exists) {
-        console.log("ok del comment");
-        const previousComments = doc.data().comments;
-        if (previousComments) {
-          previousComments.splice(index, 1);
-        }
-        const updatedComments = previousComments ? previousComments : [];
-        console.log(updatedComments);
-        linkProduct.update({ comments: updatedComments });
-        setProduct((prevState) => ({
-          ...prevState,
-          comments: updatedComments,
-        }));
-        setCommentText("");
-        setNumberComment(updatedComments.length);
-      }
-    });
-  }
   //----------------------------------------------------------------
 
   return (
@@ -210,9 +186,7 @@ function Comment(props) {
                               <>
                                 <button
                                   className="comment__delBtn"
-                                  onClick={() => {
-                                    handleDeleteComment(index);
-                                  }}
+                                  onClick={handleDeleteComment}
                                 >
                                   delete comment
                                 </button>

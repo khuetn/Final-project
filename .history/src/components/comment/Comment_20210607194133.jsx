@@ -89,30 +89,6 @@ function Comment(props) {
     }
   }
 
-  function handleDeleteComment(index) {
-    alert(index);
-
-    const linkProduct = firebase.db.collection("products").doc(productUid);
-    linkProduct.get().then((doc) => {
-      console.log(doc.exists);
-      if (doc.exists) {
-        console.log("ok del comment");
-        const previousComments = doc.data().comments;
-        if (previousComments) {
-          previousComments.splice(index, 1);
-        }
-        const updatedComments = previousComments ? previousComments : [];
-        console.log(updatedComments);
-        linkProduct.update({ comments: updatedComments });
-        setProduct((prevState) => ({
-          ...prevState,
-          comments: updatedComments,
-        }));
-        setCommentText("");
-        setNumberComment(updatedComments.length);
-      }
-    });
-  }
   //----------------------------------------------------------------
 
   return (
@@ -204,20 +180,13 @@ function Comment(props) {
                           </span>
                         </div>
                         <div className="comment__content">{comment.text}</div>
-                        {user && (
+                        {user.uid == comment.postedBy.id && (
                           <>
-                            {user.uid == comment.postedBy.id && (
-                              <>
-                                <button
-                                  className="comment__delBtn"
-                                  onClick={() => {
-                                    handleDeleteComment(index);
-                                  }}
-                                >
-                                  delete comment
-                                </button>
-                              </>
-                            )}
+                            <button className="comment__delBtn">
+                              {comment.postedBy.id}
+                              {user.uid}
+                              delete comment
+                            </button>
                           </>
                         )}
                       </div>

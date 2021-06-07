@@ -17,7 +17,7 @@ import { openNotification } from "../../components/Notification/Notification";
 function ProductItem({ product, index, showCount, history }) {
   const dispatch = useDispatch();
   const { firebase, user } = React.useContext(FirebaseContext);
-  console.log(product);
+
   //--------------------------------------------------------
 
   function checkBuyPermission(quantity) {
@@ -48,7 +48,7 @@ function ProductItem({ product, index, showCount, history }) {
             <p class="ProductItem__subName">sub Name</p>
             <div class="ProductItem__grid">
               <div class="ProductItem__img">
-                <img src={product.poster[0].url} alt="image name" />
+                <img src={product.poster[1].url} alt="image name" />
               </div>
               <div class="mask">
                 <div class="info">Quick view</div>

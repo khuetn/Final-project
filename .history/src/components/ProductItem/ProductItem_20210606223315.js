@@ -17,7 +17,7 @@ import { openNotification } from "../../components/Notification/Notification";
 function ProductItem({ product, index, showCount, history }) {
   const dispatch = useDispatch();
   const { firebase, user } = React.useContext(FirebaseContext);
-  console.log(product);
+
   //--------------------------------------------------------
 
   function checkBuyPermission(quantity) {

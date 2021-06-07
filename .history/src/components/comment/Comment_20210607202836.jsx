@@ -98,10 +98,10 @@ function Comment(props) {
       if (doc.exists) {
         console.log("ok del comment");
         const previousComments = doc.data().comments;
-        if (previousComments) {
-          previousComments.splice(index, 1);
-        }
-        const updatedComments = previousComments ? previousComments : [];
+
+        const updatedComments = previousComments
+          ? previousComments.splice(index, 1)
+          : [];
         console.log(updatedComments);
         linkProduct.update({ comments: updatedComments });
         setProduct((prevState) => ({

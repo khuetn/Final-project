@@ -50,6 +50,7 @@ function ProductListReducer(state = initState, action) {
     case "NEXT":
       console.log("next");
       let nextS = { ...state };
+      const totalProduct = nextS.filteredProducts.length();
       nextS.currentPage =
         nextS.currentPage > 2 ? nextS.currentPage : nextS.currentPage + 1;
       return nextS;

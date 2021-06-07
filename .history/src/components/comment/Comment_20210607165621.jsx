@@ -40,6 +40,9 @@ function Comment(props) {
             console.log(doc.id);
             setProductUid(doc.id);
             console.log(productUid);
+            const number = doc.data().comments;
+            console.log(number.length);
+            // setNumberComment(number);
           }
           return { id: doc.id, ...doc.data() };
         });
@@ -48,9 +51,6 @@ function Comment(props) {
         });
         console.log("ok", abc[0]);
         setProduct(abc[0]);
-        if (abc[0].comments) {
-          setNumberComment(abc[0].comments.length);
-        }
       });
   }
 
@@ -83,36 +83,12 @@ function Comment(props) {
             comments: updatedComments,
           }));
           setCommentText("");
-          setNumberComment(updatedComments.length);
+          setNumberComment(updatedComments.length());
         }
       });
     }
   }
 
-  function handleDeleteComment(index) {
-    alert(index);
-
-    const linkProduct = firebase.db.collection("products").doc(productUid);
-    linkProduct.get().then((doc) => {
-      console.log(doc.exists);
-      if (doc.exists) {
-        console.log("ok del comment");
-        const previousComments = doc.data().comments;
-        if (previousComments) {
-          previousComments.splice(index, 1);
-        }
-        const updatedComments = previousComments ? previousComments : [];
-        console.log(updatedComments);
-        linkProduct.update({ comments: updatedComments });
-        setProduct((prevState) => ({
-          ...prevState,
-          comments: updatedComments,
-        }));
-        setCommentText("");
-        setNumberComment(updatedComments.length);
-      }
-    });
-  }
   //----------------------------------------------------------------
 
   return (
@@ -168,7 +144,7 @@ function Comment(props) {
         <div className="toogle__title">
           {product ? (
             <>
-              <p>{numberComment} Comment</p>
+              <p>{numberComment}</p>
             </>
           ) : (
             <>
@@ -199,27 +175,12 @@ function Comment(props) {
                       <div key={index} className="comment__listItem">
                         <div className="comment__name">
                           {comment.postedBy.name} |{" "}
-                          <span className="comment__time">
-                            {formatDistanceToNow(comment.created)}
-                          </span>
+                          {formatDistanceToNow(comment.created)}
                         </div>
                         <div className="comment__content">{comment.text}</div>
-                        {user && (
-                          <>
-                            {user.uid == comment.postedBy.id && (
-                              <>
-                                <button
-                                  className="comment__delBtn"
-                                  onClick={() => {
-                                    handleDeleteComment(index);
-                                  }}
-                                >
-                                  delete comment
-                                </button>
-                              </>
-                            )}
-                          </>
-                        )}
+                        <button className="comment__delBtn">
+                          delete comment
+                        </button>
                       </div>
                     ))}
                   </div>

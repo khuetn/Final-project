@@ -16,7 +16,6 @@ function Comment(props) {
   //----------------------------------------------------------------
   const [product, setProduct] = React.useState(null);
   const [commentText, setCommentText] = React.useState("");
-  const [numberComment, setNumberComment] = React.useState(0);
   let params = useParams();
   let productId = params.id;
   console.log(productId);
@@ -37,7 +36,6 @@ function Comment(props) {
       .then((snapshot) => {
         const dataproducts = snapshot.docs.map((doc) => {
           if (doc.data().id == productId) {
-            console.log(doc.id);
             setProductUid(doc.id);
             console.log(productUid);
           }
@@ -48,71 +46,66 @@ function Comment(props) {
         });
         console.log("ok", abc[0]);
         setProduct(abc[0]);
-        if (abc[0].comments) {
-          setNumberComment(abc[0].comments.length);
-        }
       });
+    // firebase.db
+    //   .collection("products")
+    //   .get()
+    //   .then((snapshot) => {
+    //     const dataproducts = snapshot.docs.map((doc) => {
+    //       console.log(doc.data().id);
+    //       return { id: doc.id, ...doc.data() };
+    //     });
+    //     const abc = dataproducts.filter((product) => {
+    //       return product.id == productId;
+    //     });
+    //     console.log("ok", abc[0]);
+    //     setProduct(abc[0]);
+    //   });
   }
 
   function handleAddComment(event) {
     console.log("submit");
     event.preventDefault();
-    const linkProduct = firebase.db.collection("products").doc(productUid);
-    console.log(productUid);
-    if (!user) {
-      props.history.push("/login");
-    } else {
-      console.log("has user");
-      linkProduct.get().then((doc) => {
-        console.log(doc.exists);
-        if (doc.exists) {
-          console.log("ok has product");
-          const previousComments = doc.data().comments;
-          const comment = {
-            postedBy: { id: user.uid, name: user.displayName },
-            created: Date.now(),
-            text: commentText,
-          };
-
-          const updatedComments = previousComments
-            ? [...previousComments, comment]
-            : [comment];
-          linkProduct.update({ comments: updatedComments });
-          setProduct((prevState) => ({
-            ...prevState,
-            comments: updatedComments,
-          }));
-          setCommentText("");
-          setNumberComment(updatedComments.length);
-        }
-      });
-    }
+    const linkProduct = firebase.db.collection("products").doc(product.uid);
+    console.log(product.id);
+    // if (!user) {
+    //   props.history.push("/login");
+    // } else {
+    //   console.log("has user");
+    //   linkProduct.get().then((doc) => {
+    //     console.log(doc.exists);
+    //     if (doc.exists) {
+    //       console.log("ok has product");
+    //       const previousComments = doc.data().comments;
+    //       const comment = {
+    //         postedBy: { id: user.uid, name: user.displayName },
+    //         created: Date.now(),
+    //         text: commentText,
+    //       };
+    //       const updatedComments = [...previousComments, comment];
+    //       linkProduct.update({ comments: updatedComments });
+    //       setProduct((prevState) => ({
+    //         ...prevState,
+    //         comments: updatedComments,
+    //       }));
+    //       setCommentText("");
+    //     } else {
+    //       const comment = {
+    //         postedBy: { id: user.uid, name: user.displayName },
+    //         created: Date.now(),
+    //         text: commentText,
+    //       };
+    //       // linkProduct.update({ comments: comment });
+    //       // setProduct((prevState) => ({
+    //       //   ...prevState,
+    //       //   comments: comment,
+    //       // }));
+    //       // setCommentText("");
+    //     }
+    //   });
+    // }
   }
 
-  function handleDeleteComment(index) {
-    alert(index);
-
-    const linkProduct = firebase.db.collection("products").doc(productUid);
-    linkProduct.get().then((doc) => {
-      console.log(doc.exists);
-      if (doc.exists) {
-        console.log("ok del comment");
-        const previousComments = doc.data().comments;
-        if (previousComments) {
-          previousComments.splice(index, 1);
-        }
-        const updatedComments = previousComments ? previousComments : [];
-        console.log(updatedComments);
-        linkProduct.update({ comments: updatedComments });
-        setProduct((prevState) => ({
-          ...prevState,
-          comments: updatedComments,
-        }));
-        setCommentText("");
-        setNumberComment(updatedComments.length);
-      }
-    });
-  }
   //----------------------------------------------------------------
 
   return (
@@ -166,15 +159,8 @@ function Comment(props) {
       )}
       <div className="comment__toogle row">
         <div className="toogle__title">
-          {product ? (
-            <>
-              <p>{numberComment} Comment</p>
-            </>
-          ) : (
-            <>
-              <p>Loading...</p>
-            </>
-          )}
+          comment
+          <p>number of comment</p>
         </div>
         <button
           className="toogle__button"
@@ -192,41 +178,27 @@ function Comment(props) {
         <>
           {showListComment && (
             <>
-              {product.comments ? (
-                <>
-                  <div className="comment__list">
-                    {product.comments.map((comment, index) => (
-                      <div key={index} className="comment__listItem">
-                        <div className="comment__name">
-                          {comment.postedBy.name} |{" "}
-                          <span className="comment__time">
-                            {formatDistanceToNow(comment.created)}
-                          </span>
-                        </div>
-                        <div className="comment__content">{comment.text}</div>
-                        {user && (
-                          <>
-                            {user.uid == comment.postedBy.id && (
-                              <>
-                                <button
-                                  className="comment__delBtn"
-                                  onClick={() => {
-                                    handleDeleteComment(index);
-                                  }}
-                                >
-                                  delete comment
-                                </button>
-                              </>
-                            )}
-                          </>
-                        )}
-                      </div>
-                    ))}
+              <div className="comment__list">
+                <div className="comment__listItem">
+                  <div className="comment__name">name</div>
+                  <div className="comment__content">
+                    -Lorem ipsum dolor sit amet
                   </div>
-                </>
-              ) : (
-                <>no comment</>
-              )}
+                  <button className="comment__delBtn">delete comment</button>
+                </div>
+                <div className="comment__listItem">
+                  {product.comments.map((comment, index) => (
+                    <div key={index}>
+                      <p className="comment-author">
+                        {comment.postedBy.name} |{" "}
+                        {formatDistanceToNow(comment.created)}
+                      </p>
+                      <p>{comment.text}</p>
+                    </div>
+                  ))}
+                  <button className="comment__delBtn">delete comment</button>
+                </div>
+              </div>
             </>
           )}
         </>
