@@ -67,10 +67,7 @@ const Cart = () => {
                     <div className="col-2">
                       <div className="cart__name">
                         {product.name}
-                        <span>-Size-</span>
-                        {product.selectedSize.map((selected) => {
-                          return <span>{selected}/</span>;
-                        })}
+                        {product.selectedSize[0]}
                       </div>
                     </div>
                     <div className="col-2">

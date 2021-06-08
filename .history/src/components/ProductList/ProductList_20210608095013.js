@@ -30,18 +30,14 @@ function ProductList(props) {
       {filteredProducts.length !== 0 ? (
         <>
           {filteredProducts.map((product, index) => {
-            if (
-              index < currentPage * productPerPage &&
-              index >= (currentPage - 1) * productPerPage
-            )
-              return (
-                <ProductItem
-                  key={product.id}
-                  showCount={false}
-                  product={product}
-                  index={index}
-                />
-              );
+            return (
+              <ProductItem
+                key={product.id}
+                showCount={false}
+                product={product}
+                index={index}
+              />
+            );
           })}
           <Pagination />
         </>

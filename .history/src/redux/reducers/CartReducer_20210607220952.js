@@ -1,14 +1,14 @@
-const initialState = JSON.parse(localStorage.getItem("cart")) || {
-  products: [],
-  totalPrice: 0,
-  totalQuantities: 0,
-};
-
-// const initialState = {
+// const initState = JSON.parse(localStorage.getItem("cart")) || {
 //   products: [],
 //   totalPrice: 0,
 //   totalQuantities: 0,
 // };
+
+const initialState = {
+  products: [],
+  totalPrice: 0,
+  totalQuantities: 0,
+};
 const CartReducer = (state = initialState, action) => {
   let findPro;
   let index;
@@ -50,10 +50,8 @@ const CartReducer = (state = initialState, action) => {
           state.products[indexAdd].quantity +
           (quantity - state.products[indexAdd].quantity);
         //------------------------------------------------------
-        addState.products[indexAdd].selectedSize = action.payload.selectedSize;
+        addState.products[indexAdd].selectedSize = size;
         //------------------------------------------------------
-        localStorage.setItem("cart", JSON.stringify(addState));
-
         return addState;
       } else {
         console.log("check false");
@@ -67,8 +65,7 @@ const CartReducer = (state = initialState, action) => {
         const Tquantities = state.totalQuantities + quantity;
         product.quantity = quantity;
         //-------------------------------
-        console.log(action.payload.selectedSize);
-        product.selectedSize = action.payload.selectedSize;
+        product.selectedSize = size;
         console.log(product.quantity);
         console.log(product);
 
@@ -147,8 +144,6 @@ const CartReducer = (state = initialState, action) => {
       resetcart.totalQuantities = 0;
       resetcart.totalPrice = 0;
       return resetcart;
-      localStorage.setItem("cart", JSON.stringify(resetcart));
-
     default:
       return state;
   }

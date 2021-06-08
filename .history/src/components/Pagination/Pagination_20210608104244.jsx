@@ -9,16 +9,11 @@ function Pagination(props) {
     useSelector((state) => {
       return state.productList;
     });
-  let limitedPage = Math.floor(filteredProducts.length / productPerPage);
   React.useEffect(() => {
-    dispatch({ type: "PREVIOUS", payload: 2 });
+    dispatch({ type: "NEXT", payload: 0 });
   }, []);
   function visitNextPage() {
-    console.log(Math.floor(filteredProducts.length / productPerPage));
-    console.log(limitedPage);
-    if (currentPage < limitedPage) {
-      dispatch({ type: "NEXT", payload: currentPage });
-    }
+    dispatch({ type: "NEXT", payload: currentPage });
   }
   function visitPreviousPage() {
     dispatch({ type: "PREVIOUS", payload: currentPage });

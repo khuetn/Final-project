@@ -51,7 +51,7 @@ export default function Modal(props) {
                   <span className="checkout__productName">
                     {product.name}/Size-
                     {product.selectedSize.map((selected) => {
-                      return <>{selected}/</>;
+                      return <span>{selected}/</span>;
                     })}
                   </span>
                   <span className="checkout__productQuantity">

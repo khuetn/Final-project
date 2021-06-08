@@ -14,7 +14,6 @@ export default function Modal(props) {
   const { firebase, user } = React.useContext(FirebaseContext);
 
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const onFinish = (values) => {
     // const { city, district, commune, incubation, numberPhome, payment } =
@@ -48,12 +47,7 @@ export default function Modal(props) {
               return (
                 <div className="checkout__item">
                   <span className="checkout__index">{index + 1}</span>
-                  <span className="checkout__productName">
-                    {product.name}/Size-
-                    {product.selectedSize.map((selected) => {
-                      return <>{selected}/</>;
-                    })}
-                  </span>
+                  <span className="checkout__productName">{product.name}</span>
                   <span className="checkout__productQuantity">
                     {product.quantity}
                   </span>

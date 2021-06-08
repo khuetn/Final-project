@@ -107,11 +107,11 @@ const Details = (props) => {
   function checkBuyPermission(quantity) {
     if (user) {
       console.log(quantity);
-      let selectedSize = size;
+      console.log(size);
       if (size.length == quantity) {
         dispatch({
           type: "ADD_TO_CART",
-          payload: { product, quantity, selectedSize },
+          payload: { product, quantity, size },
         });
         openNotification({
           title: "YOUR ITEM WAS ADDED",

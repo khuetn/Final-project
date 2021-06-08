@@ -1,14 +1,14 @@
-const initialState = JSON.parse(localStorage.getItem("cart")) || {
-  products: [],
-  totalPrice: 0,
-  totalQuantities: 0,
-};
-
-// const initialState = {
+// const initState = JSON.parse(localStorage.getItem("cart")) || {
 //   products: [],
 //   totalPrice: 0,
 //   totalQuantities: 0,
 // };
+
+const initialState = {
+  products: [],
+  totalPrice: 0,
+  totalQuantities: 0,
+};
 const CartReducer = (state = initialState, action) => {
   let findPro;
   let index;
@@ -52,8 +52,6 @@ const CartReducer = (state = initialState, action) => {
         //------------------------------------------------------
         addState.products[indexAdd].selectedSize = action.payload.selectedSize;
         //------------------------------------------------------
-        localStorage.setItem("cart", JSON.stringify(addState));
-
         return addState;
       } else {
         console.log("check false");

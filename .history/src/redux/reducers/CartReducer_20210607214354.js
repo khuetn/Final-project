@@ -1,22 +1,22 @@
-const initialState = JSON.parse(localStorage.getItem("cart")) || {
-  products: [],
-  totalPrice: 0,
-  totalQuantities: 0,
-};
-
-// const initialState = {
+// const initState = JSON.parse(localStorage.getItem("cart")) || {
 //   products: [],
 //   totalPrice: 0,
 //   totalQuantities: 0,
 // };
+
+const initialState = {
+  products: [],
+  totalPrice: 0,
+  totalQuantities: 0,
+};
 const CartReducer = (state = initialState, action) => {
   let findPro;
   let index;
   switch (action.type) {
     case "ADD_TO_CART":
       console.log("card reducer");
-      const { product, quantity, size } = action.payload;
-      console.log(size);
+      const { product, quantity } = action.payload;
+
       console.log(product.quantity);
       console.log(quantity);
       const check = state.products.find((pr) => pr.id === product.id);
@@ -50,10 +50,6 @@ const CartReducer = (state = initialState, action) => {
           state.products[indexAdd].quantity +
           (quantity - state.products[indexAdd].quantity);
         //------------------------------------------------------
-        addState.products[indexAdd].selectedSize = action.payload.selectedSize;
-        //------------------------------------------------------
-        localStorage.setItem("cart", JSON.stringify(addState));
-
         return addState;
       } else {
         console.log("check false");
@@ -66,12 +62,7 @@ const CartReducer = (state = initialState, action) => {
         console.log(Tprice);
         const Tquantities = state.totalQuantities + quantity;
         product.quantity = quantity;
-        //-------------------------------
-        console.log(action.payload.selectedSize);
-        product.selectedSize = action.payload.selectedSize;
         console.log(product.quantity);
-        console.log(product);
-
         let addState = {
           ...state,
           products: [...state.products, product],
@@ -140,15 +131,8 @@ const CartReducer = (state = initialState, action) => {
       localStorage.setItem("cart", JSON.stringify(removeState));
 
       return removeState;
-    case "RESETCART":
-      console.log("reset cart");
-      let resetcart = { ...state };
-      resetcart.products = [];
-      resetcart.totalQuantities = 0;
-      resetcart.totalPrice = 0;
-      return resetcart;
-      localStorage.setItem("cart", JSON.stringify(resetcart));
-
+    case "RESET":
+      return initialState;
     default:
       return state;
   }

@@ -90,6 +90,8 @@ function Comment(props) {
   }
 
   function handleDeleteComment(index) {
+    alert(index);
+
     const linkProduct = firebase.db.collection("products").doc(productUid);
     linkProduct.get().then((doc) => {
       console.log(doc.exists);

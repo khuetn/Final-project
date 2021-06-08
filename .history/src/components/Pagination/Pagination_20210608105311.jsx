@@ -9,7 +9,7 @@ function Pagination(props) {
     useSelector((state) => {
       return state.productList;
     });
-  let limitedPage = Math.floor(filteredProducts.length / productPerPage);
+  let limitedPage = Math.floor(filteredProducts.length / productPerPage) + 1;
   React.useEffect(() => {
     dispatch({ type: "PREVIOUS", payload: 2 });
   }, []);

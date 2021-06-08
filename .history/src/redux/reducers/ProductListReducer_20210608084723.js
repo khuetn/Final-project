@@ -7,7 +7,7 @@ const initState = {
   products: [],
   filteredProducts: [],
   currentPage: 1,
-  productPerPage: 6,
+  productPerPage: 4,
 };
 function getInitialProducts() {
   firebase.db
@@ -32,15 +32,13 @@ function ProductListReducer(state = initState, action) {
       let searchState = { ...state };
       const matchedProducts = searchState.products.filter((product) => {
         return (
-          product.description.toLowerCase().includes(action.payload) ||
-          product.name.toLowerCase().includes(action.payload)
-          // product.NSX.toLowerCase().includes(action.payload)
+          product.description.toLowerCase().includes(query) ||
+          product.name.toLowerCase().includes(action.payload) ||
+          product.NSX.toLowerCase().includes(query)
         );
       });
       console.log(matchedProducts);
       searchState.filteredProducts = matchedProducts;
-      searchState.currentPage = 1;
-
       return searchState;
     case "DISCOUNT":
       let searchDiscount = { ...state };
@@ -48,8 +46,6 @@ function ProductListReducer(state = initState, action) {
         return product.discount;
       });
       searchDiscount.filteredProducts = matchedDiscount;
-      searchDiscount.currentPage = 1;
-      console.log(searchDiscount);
       return searchDiscount;
     case "NEXT":
       console.log("next");

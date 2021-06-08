@@ -107,22 +107,14 @@ const Details = (props) => {
   function checkBuyPermission(quantity) {
     if (user) {
       console.log(quantity);
-      let selectedSize = size;
-      if (size.length == quantity) {
-        dispatch({
-          type: "ADD_TO_CART",
-          payload: { product, quantity, selectedSize },
-        });
-        openNotification({
-          title: "YOUR ITEM WAS ADDED",
-          description: "Please check your cart to see your item",
-        });
-      } else {
-        openNotification({
-          title: "PLEASE SELECT SIZE",
-          description: "Please check your size ",
-        });
-      }
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: { product, quantity },
+      });
+      openNotification({
+        title: "YOUR ITEM WAS ADDED",
+        description: "Please check your cart to see your item",
+      });
     } else {
       console.log("not login");
       showModal();

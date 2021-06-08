@@ -52,8 +52,6 @@ const CartReducer = (state = initialState, action) => {
         //------------------------------------------------------
         addState.products[indexAdd].selectedSize = action.payload.selectedSize;
         //------------------------------------------------------
-        localStorage.setItem("cart", JSON.stringify(addState));
-
         return addState;
       } else {
         console.log("check false");

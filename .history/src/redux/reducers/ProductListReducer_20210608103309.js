@@ -39,8 +39,6 @@ function ProductListReducer(state = initState, action) {
       });
       console.log(matchedProducts);
       searchState.filteredProducts = matchedProducts;
-      searchState.currentPage = 1;
-
       return searchState;
     case "DISCOUNT":
       let searchDiscount = { ...state };
