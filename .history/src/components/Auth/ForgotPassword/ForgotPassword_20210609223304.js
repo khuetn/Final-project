@@ -32,7 +32,7 @@ function ForgotPassword() {
   }
 
   return (
-    <div className="bg__wrapper">
+    <div className="bg-wrapper">
       <div className="forgot__container">
         <div className="forgot__header">
           <div className="forgot__logo">

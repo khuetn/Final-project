@@ -19,24 +19,7 @@ function ProductItem({ product, index, showCount, history }) {
   const { firebase, user } = React.useContext(FirebaseContext);
   console.log(product.poster);
   //--------------------------------------------------------
-  const [isModalVisible, setIsModalVisible] = React.useState(false);
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const handleOk = () => {
-    setIsModalVisible(false);
-    history.push({
-      pathname: ROUTES.LOGIN,
-      state: true,
-    });
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-  // -------------------------------------------------------
   function checkBuyPermission(quantity) {
     let sizeDefault = ["43"];
     if (user) {
@@ -49,12 +32,10 @@ function ProductItem({ product, index, showCount, history }) {
         description: "Please check your cart to see your item",
       });
     } else {
-      showModal();
-
-      // history.push({
-      //   pathname: ROUTES.LOGIN,
-      //   state: true,
-      // });
+      history.push({
+        pathname: ROUTES.LOGIN,
+        state: true,
+      });
     }
   }
   //--------------------------------------------------------
@@ -128,13 +109,6 @@ function ProductItem({ product, index, showCount, history }) {
             <div className="ProductItem__saleNumber">-{product.discount}%</div>
           </>
         )}
-      </div>
-      <div>
-        <ModalLogin
-          handleOk={handleOk}
-          handleCancel={handleCancel}
-          isModalVisible={isModalVisible}
-        />
       </div>
     </div>
   );

@@ -129,13 +129,6 @@ function ProductItem({ product, index, showCount, history }) {
           </>
         )}
       </div>
-      <div>
-        <ModalLogin
-          handleOk={handleOk}
-          handleCancel={handleCancel}
-          isModalVisible={isModalVisible}
-        />
-      </div>
     </div>
   );
 }
