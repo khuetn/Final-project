@@ -1,0 +1,11 @@
+.ant-modal-content{
+    border: 1px solid orange!important;
+    .ant-modal-body{
+        color:orange;
+    }
+    .ant-modal-footer{
+        .ant-btn-primary{
+            background-color:orange!important;
+        }
+    }
+}
